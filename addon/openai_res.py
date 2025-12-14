@@ -79,7 +79,7 @@ def handle_response_choices(choices: List[Any]) -> str:
             choices_result += f"{split_line}{indent_text(reasoning, 4)}{split_line}"
         
         # 处理常规内容
-        choices_result += f"{split_line}{content}{split_line}"
+        choices_result += f"{split_line}{indent_text(content, 4)}{split_line}"
 
         # 处理工具调用，如果有的话
         tool_calls = message.get("tool_calls", [])
