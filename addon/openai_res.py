@@ -78,6 +78,7 @@ def handle_response_choices(choices: List[Any]) -> str:
             choices_result += f"#### 🧠 Reasoning\n"
             choices_result += f"{split_line}{indent_text(reasoning, 4)}{split_line}"
         
+        choices_result += f"#### ✏️ Content\n"
         # 处理常规内容
         choices_result += f"{split_line}{indent_text(content, 4)}{split_line}"
 

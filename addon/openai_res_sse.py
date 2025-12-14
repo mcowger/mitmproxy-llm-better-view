@@ -203,8 +203,10 @@ def handle_sse_choices(events: List[Dict[str, Any]]) -> str:
             choices_result += f"{split_line}{indent_text(reasoning, 4)}{split_line}"
 
         # 显示聚合的文本内容
+        
         content = choice_data.get("content", "").strip()
         if content:
+            choices_result += f"#### ✏️ Content\n"
             choices_result += f"{split_line}{indent_text(content, 4)}{split_line}"
 
         # 显示聚合的工具调用
